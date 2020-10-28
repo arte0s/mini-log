@@ -1,0 +1,234 @@
+.dark-mode {
+    --c2: 10, 10, 10;
+    --c3: 250, 250, 250;
+    --filter-main: brightness(0.5);
+}
+
+body {
+    --c0: 250, 250, 250;
+    --c1: 59, 85, 82;
+    --c2: var(--c0);
+    --c3: 10, 10, 10;
+
+    --col-bg-body: rgba(var(--c3), 0.1);
+    --col-bg-win: rgb(var(--c2));
+    --col-bg-field: rgba(var(--c1), 0.1);
+    --col-bg-header: rgb(var(--c1));
+
+    --col-txt: rgba(var(--c3), 0.95);
+    --col-txt-hd: rgba(var(--c0), 0.95);
+
+    --radius-main: 0.3em;
+    --radius: var(--radius-main);
+    --time-width: 40%;
+    --border-style: 1px solid var(--col-bg-body);
+    --size: 24em;
+
+    --filter-main: brightness(1);
+
+    /* background-color: var(--col-txt-hd); */
+    color: var(--col-txt);
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: -apple-system,
+        system-ui,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Open Sans",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: var(--filter-main);
+}
+
+.content {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.content>div {
+    /* filter: none !important; */
+    max-width: calc(600px - 2em * 2);
+    /* max-width: calc(768px - 2em * 2); */
+    margin: 3em auto;
+    padding: 2em;
+    background-color: var(--col-bg-win);
+    border-radius: var(--radius);
+    box-shadow: 2px 3px 7px 2px var(--col-bg-body);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    .content {
+        background-color: var(--col-bg-win);
+        height: 100%;
+        --size: 18em;
+        /* background-image: none; */
+    }
+
+    .content>div {
+        margin: 0 auto;
+        background-color: transparent;
+        box-shadow: none;
+        border: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        --radius: 0;
+        --size: 17.5em;
+    }
+
+    .content>div {
+        padding: 0;
+        height: 100%;
+    }
+
+    .table {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .tbody {
+        flex: 1;
+    }
+
+}
+
+/* Form styles */
+form {
+    display: block;
+    width: 100%;
+}
+
+form>div {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 1em);
+    padding: 1em 0;
+}
+
+input {
+    border: var(--border-style);
+    font-size: 120%;
+    padding: 0.5em;
+}
+
+input[type="text"] {
+    border-radius: var(--radius);
+    background-color: var(--col-bg-field);
+    width: calc(100% - 1em);
+    color: var(--col-txt);
+}
+
+input[type="button"],
+input[type="submit"] {
+    border-radius: var(--radius-main);
+    background-color: var(--col-bg-header);
+    color: var(--col-txt-hd);
+    margin: 0 0.25em;
+    width: 5em;
+}
+
+/* Table styles */
+.table {
+    margin-top: 0.5em;
+}
+
+.theader {
+    background-color: var(--col-bg-header);
+    border: var(--border-style);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.theader,
+.tbody>div {
+    display: flex;
+}
+
+input,
+.theader>div,
+.tbody>div>div,
+.tfooter {
+    padding: 0.5em;
+}
+
+.tbody {
+    height: calc(100vh - var(--size));
+    overflow-y: auto;
+    background-color: var(--col-bg-field);
+}
+
+.tbody>div>div {
+    display: inline-block;
+    border: var(--border-style);
+}
+
+.theader>div {
+    text-align: center;
+    font-size: 120%;
+    color: var(--col-txt-hd);
+}
+
+.theader>div:first-child {
+    width: var(--time-width);
+}
+
+.tbody>div>div:first-child {
+    width: var(--time-width);
+    border-right: 0;
+}
+
+.theader>div:last-child,
+.tbody>div>div:last-child {
+    width: calc(100% - var(--time-width));
+    border-left: 0;
+    border-right: 0;
+}
+
+.tbody>div>div {
+    border-top: 0;
+}
+
+.tfooter {
+    background-color: var(--col-bg-header);
+    border: var(--border-style);
+    border-radius: 0 0 var(--radius) var(--radius);
+    display: flex;
+    justify-content: flex-end;
+    font-size: 120%;
+    color: var(--col-txt-hd);
+}
+
+/* Width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--col-bg-field);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--col-bg-body);
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Mini Log</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <div class="content">
+        <div>
+            <form action="./log" method="post">
+                <input type="text" name="text" maxlength="60"></input>
+
+                <div>
+                    <input type="submit" value="Save"></input>
+                    <input type="button" value="Dark" id="colors"></input>
+                </div>
+            </form>
+
+            <div class="table">
+
+                <div class="theader">
+                    <div>Time</div>
+                    <div>Text</div>
+                </div>
+
+                <div class="tbody" id="content">
+                    <div style="padding: 10px;">Connection...</div>
+                </div>
+
+                <div class="tfooter">
+                    <div>Total 12 records</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -173,7 +173,7 @@ footer {
 
 .tbody {
     height: calc(100vh - var(--size));
-    overflow-y: auto;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     background-color: var(--col-bg-field);
 }

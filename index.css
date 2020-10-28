@@ -153,27 +153,31 @@ input[type="submit"] {
     margin-top: 0.5em;
 }
 
-.theader {
+header {
     background-color: var(--col-bg-header);
     border: var(--border-style);
     border-radius: var(--radius) var(--radius) 0 0;
+    
+    position: fixed;
+    width: 100%;
 }
 
-.theader,
+header,
 .tbody>div {
     display: flex;
 }
 
 input,
-.theader>div,
+header>div,
 .tbody>div>div,
-.tfooter {
+footer {
     padding: 0.5em;
 }
 
 .tbody {
     height: calc(100vh - var(--size));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: var(--col-bg-field);
 }
 
@@ -182,13 +186,13 @@ input,
     border: var(--border-style);
 }
 
-.theader>div {
+header>div {
     text-align: center;
     font-size: 120%;
     color: var(--col-txt-hd);
 }
 
-.theader>div:first-child {
+header>div:first-child {
     width: var(--time-width);
 }
 
@@ -197,7 +201,7 @@ input,
     border-right: 0;
 }
 
-.theader>div:last-child,
+header>div:last-child,
 .tbody>div>div:last-child {
     width: calc(100% - var(--time-width));
     border-left: 0;
@@ -208,7 +212,7 @@ input,
     border-top: 0;
 }
 
-.tfooter {
+footer {
     background-color: var(--col-bg-header);
     border: var(--border-style);
     border-radius: 0 0 var(--radius) var(--radius);

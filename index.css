@@ -157,9 +157,6 @@ header {
     background-color: var(--col-bg-header);
     border: var(--border-style);
     border-radius: var(--radius) var(--radius) 0 0;
-    
-    position: fixed;
-    width: 100%;
 }
 
 header,
